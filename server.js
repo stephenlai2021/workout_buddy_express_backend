@@ -31,10 +31,15 @@ app.use('/api/users', usersRoutes)
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(port, () => {
-      console.log('Connet to MongoDB successfully, server running on port ', port)
-    })
+    // app.listen(port, () => {
+    //   console.log('Connet to MongoDB successfully, server running on port ', port)
+    // })
+    console.log('Connet to MongoDB successfully, server running on port ', port)
   })
   .catch(error => {
     console.log('error: ', error.message)
+  })
+
+  app.listen(port, () => {
+    console.log('Server running on port ', port)
   })
