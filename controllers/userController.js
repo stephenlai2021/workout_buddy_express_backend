@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 const createToken = _id => {
   // token expires in 3 days
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '10m' })
+  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '5m' })
 }
 
 // signup user
