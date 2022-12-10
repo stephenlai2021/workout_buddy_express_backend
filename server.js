@@ -4,9 +4,9 @@ dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-
-import workoutsRoutes from './routes/workouts.js'
-import usersRoutes from './routes/users.js'
+import workoutsRoutes from './routes/workoutsRoute.js'
+import usersRoutes from './routes/usersRoute.js'
+import refreshRoutes from './routes/refreshRoute.js'
 
 const port = process.env.PORT || 5000
 
@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 
 app.use('/api/workouts', workoutsRoutes)
 app.use('/api/users', usersRoutes)
+app.use('/api/refresh', refreshRoutes)
 
 // connect to db
 mongoose
